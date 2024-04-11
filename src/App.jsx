@@ -1,7 +1,11 @@
 import { useState } from "react";
+import { useStateContext } from "./context";
 
 function App() {
   const [input, setInput] = useState("");
+  const { weather } = useStateContext();
+  console.log(weather);
+
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center bg-indigo-700 bg-opacity-25">
