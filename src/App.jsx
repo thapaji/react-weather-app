@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useStateContext } from "./context";
+import { BackgroundLayout } from "./component/BackgroundLayout";
+import { WeatherCard } from "./component/WeatherCard";
+import { MiniCard } from "./component/MiniCard";
 
 function App() {
   const [input, setInput] = useState("");
@@ -27,6 +30,11 @@ function App() {
           />
         </div>
       </nav>
+      <BackgroundLayout />
+      <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
+        <WeatherCard />
+        <MiniCard />
+      </main>
     </div>
   );
 }
