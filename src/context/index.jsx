@@ -54,8 +54,7 @@ export const StateContextProvider = ({ children }) => {
             weather,
             setPlace,
             values,
-            thisLocation,
-            place
+            thisLocation
         }}>
             {children}
         </StateContext.Provider>

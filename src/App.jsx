@@ -6,8 +6,8 @@ import { MiniCard } from "./component/MiniCard";
 
 function App() {
   const [input, setInput] = useState("");
-  const { weather,thisLocation, values } = useStateContext();
-  
+  const { weather, thisLocation, values, place } = useStateContext();
+
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center bg-indigo-700 bg-opacity-25">
@@ -31,16 +31,27 @@ function App() {
       </nav>
       <BackgroundLayout />
       <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
-        <WeatherCard  
-        place={thisLocation}
-        windspeed={weather.windspeed}
-        humidity={weather.humidity}
-        temperature={weather.temp}
-        heatIndex={weather.heatIndex}
-        iconString={weather.conditions}
-        conditions={weather.conditions}
+        <WeatherCard
+          place={thisLocation}
+          windspeed={weather.wspd}
+          humidity={weather.humidity}
+          temperature={weather.temp}
+          heatIndex={weather.heatindex}
+          iconString={weather.conditions}
+          conditions={weather.conditions}
         />
-        <MiniCard />
+        <div className="flex justify-center gap-4 flex-wrap w-[60%]">
+          {values?.slice(1, 6).map((elm) => {
+            return (
+              <MiniCard
+                key={elm.datetime}
+                time={elm.datetime}
+                temperature={elm.temp}
+                iconString={elm.conditions}
+              />
+            );
+          })}
+        </div>
       </main>
     </div>
   );

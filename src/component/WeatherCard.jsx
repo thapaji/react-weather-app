@@ -54,7 +54,7 @@ export const WeatherCard = ({
   return (
     <div className="w-[22rem] min-w-[22-rem] h-[30rem] glassCard p-4">
       <div className="flex w-full just-center items-center gap-4 mt-12 mb-4">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <svg xmlns="http://www.w3.org/2000/svg" height='6rem' width='6rem' viewBox="0 0 512 512">
           <path d={icon} />
         </svg>
         <p className="font-bold text-5xl flex justify-center items-center">{temperature} &deg;C</p>
@@ -64,11 +64,12 @@ export const WeatherCard = ({
         <p className="flex-1 text-center p-2">{new Date().toDateString()}</p>
         <p className="flex-1 text-center p-2">{time}</p>
       </div>
-      <div className="w-full flex justify-between items-center mt-4">
+      <div className="w-full flex justify-between items-center mt-4 gap-2">
         <p className="flex-1 text-center p-2 font-bold bg-blue-600 shadow rounded-lg">
           Wind Speed <span className="font-normal">{windspeed}</span>
         </p>
-        <p className="flex-1 text-center p-2 font-bold rounded-lg bg-greeen-600">{humidity}</p>
+        <p className="flex-1 text-center p-2 font-bold rounded-lg bg-green-600">
+          Humidity <span className="font-normal">{humidity}</span></p>
       </div>
       <div className="w-full p-3 mt-4 flex justify-between item-center">
         <p className="font-semibold text-lg">Heat Index</p>

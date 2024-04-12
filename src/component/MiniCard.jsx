@@ -48,11 +48,11 @@ export const MiniCard = ({ time, temperature, iconString }) => {
       <hr />
       <div className="w-full flex justify-center items-center felx-1">
         {/* height 4rem weidth 4rem to be implemented */}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <svg className="mt-3" xmlns="http://www.w3.org/2000/svg" height='3rem' width='3rem' viewBox="0 0 512 512">
           <path d={icon} />
         </svg>
       </div>
-      <p className="text-center font-bold">{temperature}&degC</p>
+      <p className="text-center font-bold mt-2">{temperature} &deg;C</p>
     </div>
   );
 };
