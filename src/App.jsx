@@ -6,9 +6,8 @@ import { MiniCard } from "./component/MiniCard";
 
 function App() {
   const [input, setInput] = useState("");
-  const { weather } = useStateContext();
-  console.log(weather);
-
+  const { weather,thisLocation, values } = useStateContext();
+  
   return (
     <div className="w-full h-screen text-white px-8">
       <nav className="w-full p-3 flex justify-between items-center bg-indigo-700 bg-opacity-25">
@@ -32,7 +31,15 @@ function App() {
       </nav>
       <BackgroundLayout />
       <main className="w-full flex flex-wrap gap-8 py-4 px-[10%] items-center justify-center">
-        <WeatherCard />
+        <WeatherCard  
+        place={thisLocation}
+        windspeed={weather.windspeed}
+        humidity={weather.humidity}
+        temperature={weather.temp}
+        heatIndex={weather.heatIndex}
+        iconString={weather.conditions}
+        conditions={weather.conditions}
+        />
         <MiniCard />
       </main>
     </div>
