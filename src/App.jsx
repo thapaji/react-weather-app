@@ -6,7 +6,12 @@ import { MiniCard } from "./component/MiniCard";
 
 function App() {
   const [input, setInput] = useState("");
-  const { weather, thisLocation, values, place } = useStateContext();
+  const { weather, thisLocation, values, setPlace } = useStateContext();
+
+const submitCity = ()=>{
+  setPlace(input);
+  setInput('');
+}
 
   return (
     <div className="w-full h-screen text-white px-8">
@@ -18,10 +23,12 @@ function App() {
           </svg>
           <input
             type="text"
+            placeholder="Search City"
             value={input}
             onKeyUp={(e) => {
               if (e.key === "Enter") {
                 //Submit the form
+                submitCity();
               }
             }}
             onChange={(e) => setInput(e.target.value)}
